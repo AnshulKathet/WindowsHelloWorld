@@ -1,1 +1,1 @@
-echo "Hello... This is my first Jenkins Demo: %date%: %time% "
+echo "Hello... This is my first Jenkins Demo "
