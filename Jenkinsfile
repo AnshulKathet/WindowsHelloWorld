@@ -1,15 +1,19 @@
 pipeline {
-    agent none
+  agent none
+
     stages {
-        stage("Stage 1") {
+        stage('Example Build') {
+            agent { label 'Jenkins-Win' }
             steps {
-                node('Jenkins-Win'){
-                    script {
-                        writeFile(file: 'test.txt', text: 'Hello World!', encoding: 'UTF-8')
-                    }
-                    // This should print the file content on slave (Hello World!)
-                    bat "type test.txt"
-                }
+                sh 'env'
+                sh ' sleep 8'
+            }
+        }
+        stage('Example Test') {
+            agent { label 'Jenkins-Win' }
+            steps {
+                sh 'env'
+                sh ' sleep 5'
             }
         }
     }
