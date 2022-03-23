@@ -1,7 +1,7 @@
 pipeline {
     stages{        
         stage('Example Build') {
-            //agent { label 'Jenkins-Win' }
+            agent { label 'Jenkins-Win' }
             steps {
                 echo 'env'
                 echo ' sleep 8'
