@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage("Stage 1") {
             steps {
-                node('myLabel'){
+                node('Jenkins-Win'){
                     script {
                         writeFile(file: 'test.txt', text: 'Hello World!', encoding: 'UTF-8')
                     }
