@@ -1,3 +1,5 @@
+pipeline {
+    stages{        
         stage('Example Build') {
             //agent { label 'Jenkins-Win' }
             steps {
@@ -12,3 +14,5 @@
                 echo ' sleep 5'
             }
         }
+    }
+}
