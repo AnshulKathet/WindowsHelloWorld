@@ -1,19 +1,15 @@
 pipeline {
-  agent none
-
+    agent none
     stages {
-        stage('Example Build') {
-            agent { label 'build-label' }
+        stage("Stage 1") {
             steps {
-                sh 'env'
-                sh ' sleep 8'
-            }
-        }
-        stage('Example Test') {
-            agent { label 'deploy-label' }
-            steps {
-                sh 'env'
-                sh ' sleep 5'
+                node('myLabel'){
+                    script {
+                        writeFile(file: 'test.txt', text: 'Hello World!', encoding: 'UTF-8')
+                    }
+                    // This should print the file content on slave (Hello World!)
+                    bat "type test.txt"
+                }
             }
         }
     }
