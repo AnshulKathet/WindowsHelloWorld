@@ -1,7 +1,3 @@
-pipeline {
-  agent none
-
-    stages {
         stage('Example Build') {
             agent { label 'Jenkins-Win' }
             steps {
@@ -16,5 +12,3 @@ pipeline {
                 sh ' sleep 5'
             }
         }
-    }
-}
