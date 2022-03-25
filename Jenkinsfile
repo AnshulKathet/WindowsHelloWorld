@@ -1,4 +1,5 @@
 pipeline {
+    agent { label 'Jenkins-Win' }
     stages{        
         stage('Example Build') {
             agent { label 'Jenkins-Win' }
